@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "ET4244 Assignment",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 40,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb",
+      "top": 80,
+      "left": 390,
+      "attrs": {
+        "common": "anode"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "red_resistor",
+      "top": 70,
+      "left": 290,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "green_resistor",
+      "top": 130,
+      "left": 290,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "blue_resistor",
+      "top": 190,
+      "left": 290,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    ["uno:3", "red_resistor:1", "green", ["v0"]],
+    ["red_resistor:2", "rgb:R", "red", ["v0"]],
+    ["uno:4", "green_resistor:1", "green", ["v0"]],
+    ["green_resistor:2", "rgb:G", "green", ["v0"]],
+    ["uno:5", "blue_resistor:1", "blue", ["v0"]],
+    ["blue_resistor:2", "rgb:B", "blue", ["v0"]],
+    ["uno:5V", "rgb:COM", "red", ["v0"]]
+  ],
+  "dependencies": {}
+}
